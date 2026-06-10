@@ -15,9 +15,8 @@ app.use('/api/ai', require('./routes/ai'));
 app.use('/api/video', require('./routes/video'));
 app.use('/api/sandbox', require('./routes/sandbox'));
 
-const mongoURI = "mongodb://127.0.0.1:27017/lingopax_mona";
 
-mongoose.connect(mongoURI)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('🎉 MongoDB Database Connected Successfully!');
   })
